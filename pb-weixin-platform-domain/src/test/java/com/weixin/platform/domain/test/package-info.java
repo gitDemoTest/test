@@ -1,0 +1,1 @@
+package com.weixin.platform.domain.test;

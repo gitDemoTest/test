@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE log4j:configuration SYSTEM "log4j.dtd">
+<log4j:configuration xmlns:log4j="http://jakarta.apache.org/log4j/">
+
+    <appender class="org.apache.log4j.DailyRollingFileAppender" name="apiTimeLog">
+        <param value="UTF-8" name="encoding"/>
+        <param value="/opt/logs/weixin/pb-weixin-platform-web/api_time.log" name="File"/>
+        <param value="INFO" name="Threshold"/>
+        <layout class="org.apache.log4j.PatternLayout">
+            <param value="%5p %d{yyyy-MM-dd HH:mm:ss.SSS} %m %n" name="ConversionPattern"/>
+        </layout>
+    </appender>
+
+    <appender class="org.apache.log4j.DailyRollingFileAppender" name="errorlog">
+        <param value="UTF-8" name="encoding"/>
+        <param value="/opt/logs/weixin/pb-weixin-platform-web/error.log" name="File"/>
+        <param value="ERROR" name="Threshold"/>
+        <layout class="org.apache.log4j.PatternLayout">
+            <param value="%d{yy-MM-dd HH:mm:ss,SSS} %-5p %c(%F:%L) \#\# %m%n" name="ConversionPattern"/>
+        </layout>
+    </appender>
+
+    <appender class="org.apache.log4j.DailyRollingFileAppender" name="serviceLog">
+        <param value="UTF-8" name="encoding"/>
+        <param value="/opt/logs/weixin/pb-weixin-platform-web/service.log" name="File"/>
+        <param value="INFO" name="Threshold"/>
+        <layout class="org.apache.log4j.PatternLayout">
+            <param value="%d{yy-MM-dd HH:mm:ss,SSS} %-5p %c(%F:%L) \#\# %m%n" name="ConversionPattern"/>
+        </layout>
+    </appender>
+
+    <appender class="org.apache.log4j.ConsoleAppender" name="stdout">
+        <param value="UTF-8" name="encoding"/>
+        <param value="INFO" name="Threshold"/>
+        <layout class="org.apache.log4j.PatternLayout">
+            <param value="%d{yy-MM-dd HH:mm:ss,SSS} %-5p %c(%F:%L) \#\# %m%n" name="ConversionPattern"/>
+        </layout>
+    </appender>
+
+    <appender class="org.apache.log4j.DailyRollingFileAppender" name="rootLog">
+        <param value="UTF-8" name="encoding"/>
+        <param value="/opt/logs/weixin/pb-weixin-platform-web/root.log" name="File"/>
+        <param value="INFO" name="Threshold"/>
+        <layout class="org.apache.log4j.PatternLayout">
+            <param value="%d{yy-MM-dd HH:mm:ss,SSS} %-5p %c(%F:%L) \#\# %m%n" name="ConversionPattern"/>
+        </layout>
+    </appender>
+
+    <logger name="apiTime" additivity="false">
+        <appender-ref ref="apiTimeLog"/>
+    </logger>
+    <logger name="error" additivity="false">
+        <appender-ref ref="errorlog"/>
+    </logger>
+    <logger name="service" additivity="false">
+        <appender-ref ref="serviceLog"/>
+    </logger>
+        <root>
+            <priority value ="DEBUG"/>
+            <appender-ref ref="consoleAppender"/>
+        </root>
+        <appender name="consoleAppender" class="org.apache.log4j.ConsoleAppender">
+            <param name="encoding" value="UTF-8"/>
+            <param name="threshold" value="INFO"/>
+            <layout class="org.apache.log4j.PatternLayout">
+                <param name="ConversionPattern" value="%5p:%d{yyyy-MM-dd HH:mm:ss.SSS}[%M] %m %n"/>
+            </layout>
+        </appender>
+
+        <logger name="java.sql.ResultSet" additivity="false">
+            <level value="DEBUG"/>
+            <appender-ref ref="mybatisAppender"/>
+        </logger>
+        <logger name="java.sql.Connection" additivity="false">
+            <level value="DEBUG"/>
+            <appender-ref ref="mybatisAppender"/>
+        </logger>
+        <logger name="java.sql.Statement" additivity="false">
+            <level value="DEBUG"/>
+            <appender-ref ref="mybatisAppender"/>
+        </logger>
+        <logger name="java.sql.PreparedStatement" additivity="false">
+            <level value="DEBUG"/>
+            <appender-ref ref="mybatisAppender"/>
+        </logger>
+        <appender name="mybatisAppender" class="org.apache.log4j.ConsoleAppender">
+            <param name="threshold" value="DEBUG"/>
+            <param name="encoding" value="UTF-8"/>
+            <layout class="org.apache.log4j.PatternLayout">
+                <param value="%5p:[%20M] %d{yyyy-MM-dd HH:mm:ss.SSS} ^^ %m %n" name="ConversionPattern"/>
+            </layout>
+        </appender>
+    
+    <root>
+        <priority value ="INFO"/>
+        <appender-ref ref="stdout"/>
+        <appender-ref ref="rootLog"/>
+    </root>
+
+</log4j:configuration>
