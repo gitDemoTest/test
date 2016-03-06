@@ -61,7 +61,7 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
  * Date: 2016-03-06
  * Time: 上午11:27
  *
- * @author siyouqiang@meituan.com
+ * @author siyouqiang
  */
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations = {"classpath*:/spring-config.xml"})

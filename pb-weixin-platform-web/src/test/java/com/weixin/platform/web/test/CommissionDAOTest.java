@@ -30,7 +30,7 @@ import javax.annotation.Resource;
  * Date: 2016-03-06
  * Time: 上午11:26
  *
- * @author siyouqiang@meituan.com
+ * @author siyouqiang
  */
 public class CommissionDAOTest extends AbstractJunitTest {
 

@@ -29,7 +29,7 @@ import java.util.List;
  * Date: 2016-03-06
  * Time: 上午10:52
  *
- * @author siyouqiang@meituan.com
+ * @author siyouqiang
  */
 @Repository
 public interface CommissionDAO {
