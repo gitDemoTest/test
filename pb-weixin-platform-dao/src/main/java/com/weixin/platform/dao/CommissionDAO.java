@@ -28,8 +28,6 @@ import java.util.List;
  * <p>
  * Date: 2016-03-06
  * Time: 上午10:52
- *
- * @author siyouqiang
  */
 @Repository
 public interface CommissionDAO {

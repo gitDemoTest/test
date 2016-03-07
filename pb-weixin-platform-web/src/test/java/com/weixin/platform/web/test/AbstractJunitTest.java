@@ -60,8 +60,6 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
  //                  不见满街漂亮妹，哪个归得程序员？
  * Date: 2016-03-06
  * Time: 上午11:27
- *
- * @author siyouqiang
  */
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations = {"classpath*:/spring-config.xml"})

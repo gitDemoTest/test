@@ -22,6 +22,5 @@
  * Date: 2016-03-06
  * Time: 上午10:10
  *
- * @author siyouqiang
  */
 package com.weixin.platform.dao;

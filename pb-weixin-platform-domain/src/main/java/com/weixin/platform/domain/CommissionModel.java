@@ -26,8 +26,6 @@ import java.util.Date;
  * <p>
  * Date: 2016-03-06
  * Time: 上午10:18
- *
- * @author siyouqiang
  */
 public class CommissionModel implements Serializable{
     private long id;
